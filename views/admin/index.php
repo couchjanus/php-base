@@ -2,25 +2,22 @@
 require_once realpath(__DIR__).'/../../views/head.php';
 require_once realpath(__DIR__).'/../../views/nav.php';
 ?>
-
+<div class="jumbotron">
+        <h1>Admin Blog</h1>
+</div>
 <div class="row">
         <div class="col-xs-12">
-            <h2>Add Post</h2>
-            <form role="form" method="POST" action="/add">
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" name="title">
-                </div>
-                <div class="form-group">
-                    <label for="content">Content</label>
-                    <textarea class="form-control" rows="3" id="content" name="content"></textarea>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </div>
-            </form>
+            <h2>Post list</h2>
+            <?php 
+            echo "<p><a class='btn btn-primary' "."href=/create"." role='button'>Add post &raquo;</a></p>";
+
+              foreach($result as $row) {
+                  echo "<div class='col-lg-10'>";
+                  echo "<p>".$row['title']."<a class='btn btn-primary' "."href=/edit?id=".$row['id']." role='button'>Edit post &raquo;</a>"."<a class='btn btn-primary' "."href=/delete?id=".$row['id']." role='button'>Delete post &raquo;</a></p></div>";
+              }
+            ?>
         </div>
 </div>
- 
+
 <?php
 require_once realpath(__DIR__).'/../../views/footer.php';

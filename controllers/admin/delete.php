@@ -6,7 +6,7 @@
        die();
     }
     
-  
+
    $connection = new PDO('mysql:host=localhost;dbname=webdev;charset=utf8', 'root', 'ghbdtn');
    
    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -15,10 +15,9 @@
 
     if( $_POST["title"] && $_POST["content"] ) {
 
-        $sth = $connection->prepare("INSERT INTO posts (title,content) VALUES (:title,:content)");
+        $sth = $connection->prepare("DELETE FROM posts WHERE id = :ID");
 
-        $sth->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
-        $sth->bindParam(':content', $_POST['content'], PDO::PARAM_STR);
+        $stmt->bindParam(':ID', $_POST['id'], PDO::PARAM_INT);   
         $sth->execute();
 
         redirect("/admin");

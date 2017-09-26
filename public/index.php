@@ -29,13 +29,40 @@ switch ($_SERVER['REQUEST_URI']) {
         # code...
         require_once realpath(__DIR__).'/../controllers/admin/add.php';
         break;
+    case '/create':
+        # code...
+        require_once realpath(__DIR__).'/../controllers/admin/create.php';
+        break;
+    
+    case '/update':
+        # code...
+        require_once realpath(__DIR__).'/../controllers/admin/update.php';
+        break;
     default:
         # code...
         $url = $_SERVER['REQUEST_URI'];
 
         parse_str(parse_url($url, PHP_URL_QUERY), $arr);
 
-        echo $arr['id'];
+        $id = $arr['id'];
+
+        $pathid = explode("?", $url);
+
+        if ($pathid[0] == '/edit'){
+        
+            require_once realpath(__DIR__).'/../controllers/admin/edit.php';
+        }
+        else if ($pathid[0] == '/update'){
+        
+            require_once realpath(__DIR__).'/../controllers/admin/update.php';
+        }
+        else if ($pathid[0] == '/delete'){
+        
+            require_once realpath(__DIR__).'/../controllers/admin/delete.php';
+        }
+        else{
+                 echo $arr['id'];
+             }
         break;
 }
 
