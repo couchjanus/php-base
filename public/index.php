@@ -17,10 +17,7 @@ switch ($_SERVER['REQUEST_URI']) {
         # code...
         require_once realpath(__DIR__).'/../controllers/blog.php';
         break;
-    case '/detail':
-        # code...
-        require_once realpath(__DIR__).'/../controllers/detail.php';
-        break;
+    
     case '/admin':
         # code...
         require_once realpath(__DIR__).'/../controllers/admin/index.php';
@@ -59,6 +56,10 @@ switch ($_SERVER['REQUEST_URI']) {
         else if ($pathid[0] == '/delete'){
         
             require_once realpath(__DIR__).'/../controllers/admin/delete.php';
+        }
+        else if ($pathid[0] == '/detail'){
+            
+            require_once realpath(__DIR__).'/../controllers/detail.php';
         }
         else{
                  echo $arr['id'];
