@@ -6,7 +6,9 @@
    if ($connection){
     $sth = $connection->prepare("SELECT * FROM posts WHERE id = :ID");
     $sth->bindParam(':ID', $_GET['id'], PDO::PARAM_INT);   
-    $result = $sth->execute();
+    $sth->execute();
+    $result = $sth->fetch(PDO::FETCH_BOTH);
+    // var_dump($result);
    }
-  require_once realpath(__DIR__).'/../../views/admin/update.php';
+   require_once realpath(__DIR__).'/../../views/admin/update.php';
 ?>

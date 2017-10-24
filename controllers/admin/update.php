@@ -5,7 +5,6 @@
        header('Location: ' . $url, true, $statusCode);
        die();
     }
-    
 
    $connection = new PDO('mysql:host=localhost;dbname=webdev;charset=utf8', 'root', 'ghbdtn');
    
@@ -19,7 +18,7 @@
 
         $sth->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
         $sth->bindParam(':content', $_POST['content'], PDO::PARAM_STR);
-        $stmt->bindParam(':ID', $_POST['id'], PDO::PARAM_INT);   
+        $sth->bindParam(':ID', $_POST['id'], PDO::PARAM_INT);   
         $sth->execute();
 
         redirect("/admin");

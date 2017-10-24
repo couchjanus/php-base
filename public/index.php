@@ -49,10 +49,7 @@ switch ($_SERVER['REQUEST_URI']) {
         
             require_once realpath(__DIR__).'/../controllers/admin/edit.php';
         }
-        else if ($pathid[0] == '/update'){
-        
-            require_once realpath(__DIR__).'/../controllers/admin/update.php';
-        }
+
         else if ($pathid[0] == '/delete'){
         
             require_once realpath(__DIR__).'/../controllers/admin/delete.php';
