@@ -5,7 +5,11 @@ require_once realpath(__DIR__).'/../includes/nav.php';
       <!-- Jumbotron -->
       <div class="jumbotron">
         <h1><?=$title?></h1>
-        <p><a class="btn btn-lg btn-success" href="https://www.google.com/recaptcha" role="button">Adding reCAPTCHA to your site</a></p>
+        <p>Добавляем <a href="https://github.com/google/recaptcha">reCAPTCHA API key</a>
+Для начала необходимо добавить reCAPTCHA API key, для этого перейдите по ссылке: 
+        <a class="btn btn-lg btn-success" href="https://www.google.com/recaptcha/admin#list" role="button">Adding reCAPTCHA to your site</a>
+и заполните поля: метка, домены (где будет использоваться reCAPTCHA) и жмем на кнопку "Register".
+        </p>
       </div>
     
     <div class="container form-wrap">
@@ -30,12 +34,18 @@ require_once realpath(__DIR__).'/../includes/nav.php';
                     </div>
                 </div>
                 <div class="form-group">
+                    <div class="col-12">
+                        <div class="g-recaptcha" data-sitekey="6LehvTsUAAAAALKcM_8bYZLIpDWQ6m1ffWbbyW9g"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
                     <div class="col-10">
                         <button type="submit" class="submit">Send</button>
                     </div>
                 </div>
             </form>
-            <div class="g-recaptcha" data-sitekey="6LehvTsUAAAAALKcM_8bYZLIpDWQ6m1ffWbbyW9g"></div>
+            
         </div>
      </div>
 <?php
