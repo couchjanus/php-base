@@ -9,8 +9,13 @@ return array(
 
     //Выход
     'user/logout' => 'users/logout',
-
+    
+    'admin/create' => 'admin/create',
+    'admin/edit/{id}' => 'admin/edit',
+    'admin' => 'admin/index',
+    'contact' => 'contact/index',
     //Главаня страница
     'index.php' => 'home/index', //вызываем action Index в home Controller
-    '' => 'home/index'  //вызываем action Index в home Controller
+    '' => 'home/index',  //вызываем action Index в home Controller
+    
 );
