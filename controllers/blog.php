@@ -1,10 +1,15 @@
-<?php 
-  $connection = new PDO('mysql:host=localhost;dbname=webdev;charset=utf8', 'root', 'ghbdtn');
-      
-  if ($connection){
-    $sql = 'SELECT * FROM posts';
-    $result = $connection->query($sql);
-  }  
+<?php
+
+switch ($actionName) {
+ case 'index':
+
+  $db = makeConnection();
+  $sql = 'SELECT * FROM posts';
   
-  require_once realpath(__DIR__).'/../views/blog.php';
+  $data['result'] = $db->query($sql);
+  $data['title'] = "HEllo There!";
+  
+  render('blog/index', $data);
+  break;
+}
 ?>

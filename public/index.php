@@ -1,7 +1,7 @@
 <?php
 
-require_once realpath(__DIR__).'/../router/router.php';
-
+require_once realpath(__DIR__).'/../bootstrap.php';
+// require_once realpath(__DIR__).'/../router/router.php';
 
 
 // switch ($_SERVER['REQUEST_URI']) {

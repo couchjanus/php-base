@@ -1,6 +1,6 @@
 <?php
-require_once realpath(__DIR__).'/../includes/head.php';
-require_once realpath(__DIR__).'/../includes/nav.php';
+require_once VIEWS.'includes/head.php';
+require_once VIEWS.'includes/nav.php';
 ?>
       <!-- Jumbotron -->
       <div class="jumbotron">
@@ -29,4 +29,4 @@ require_once realpath(__DIR__).'/../includes/nav.php';
         </div>
       </div>
 <?php
-require_once realpath(__DIR__).'/../includes/footer.php';
+require_once VIEWS.'includes/footer.php';
